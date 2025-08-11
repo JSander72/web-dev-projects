@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
+// import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -55,7 +55,7 @@ export const Banner = () => {
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm James`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Developer", "Backend Software Engineer", "Storage Manager" ]'><span className="wrap">{text}</span></span></h1>
                   <p>I’m a Technical Writer turned Software Engineer who loves building clean APIs and the docs that make them effortless to use. I translate complex systems into human friendly guides, ship reliable backends, and collaborate in Agile teams to move ideas from whiteboard to production. Comfortable across Python, JavaScript, and SQL, I care about performance, clear communication, and leaving code (and documentation) better than I found it. Currently leveling up my cloud game (AWS/GCP) because future me likes scalability.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
               </div>}
             </TrackVisibility>
           </Col>
