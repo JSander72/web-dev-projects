@@ -12,7 +12,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   // Removed unused 'index' state
-  const toRotate = useMemo(() => [ "Software Developer", "Backend Software Engineer", "Storage Manager" ], []);
+  const toRotate = useMemo(() => [ "Web Developer", "Backend Developer", "Technical Writer" ], []);
   const period = 2000;
 
   const tick = useCallback(() => {
@@ -54,7 +54,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm James`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Developer", "Backend Software Engineer", "Storage Manager" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <p>I’m a Technical Writer turned Software Engineer who loves building clean APIs and the docs that make them effortless to use. I translate complex systems into human friendly guides, ship reliable backends, and collaborate in Agile teams to move ideas from whiteboard to production. Comfortable across Python, JavaScript, and SQL, I care about performance, clear communication, and leaving code (and documentation) better than I found it. Currently leveling up my cloud game (AWS/GCP) because future me likes scalability.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>

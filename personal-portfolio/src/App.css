@@ -616,3 +616,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+
+.skills-grid { display: grid; gap: 1.25rem; margin-bottom: 2rem;}
+.skills-group-title { font-size: 1.1rem; margin: 0.5rem 0; }
+.skills-chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.chip { padding: .35rem .6rem; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
+.custom-arrow { background: transparent; border: none; display: grid; place-items: center; padding: .25rem; cursor: pointer; }
+.custom-arrow img { width: 28px; height: 28px; }
+
+.skill {
+  padding: 60px 0; /* 60px top & bottom padding */
+}
+
+@media (max-width: 768px) {
+  .skill {
+    padding: 40px 0; /* a bit tighter on mobile */
+  }
+}
+
+
