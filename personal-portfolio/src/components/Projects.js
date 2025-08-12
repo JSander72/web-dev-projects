@@ -1,9 +1,10 @@
 // src/components/Projects.js
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
+// import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import grnliteLogo from "../assets/img/Grn_Lite_Logo.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -14,8 +15,8 @@ export const Projects = () => {
     {
       title: "GRNLITE: author & editor collaboration platform",
       description:
-        "GRNLITE is a collaborative platform connecting authors, beta readers, and editors. It enables real-time feedback to help authors refine manuscripts, fosters direct author-reader communication for clear expectations, and supports project budgeting to match authors with beta readers that fit their needs. Detailed beta reader profiles showcase experience, rates, and preferences, while editors can collaborate to provide professional insights. Integrated secure payment systems streamline transactions between authors, beta readers, and editors.",
-      imgUrl: projImg1,
+        "GRNLITE is a collaborative platform connecting authors, beta readers, and editors. It enables real-time feedback to help authors refine manuscripts, fosters direct author-reader communication for clear expectations, and supports project budgeting to match authors with beta readers that fit their needs. Integrated secure payment systems streamline transactions between authors, beta readers, and editors.",
+      imgUrl: grnliteLogo,
       link: "https://grnlite.onrender.com/",
     },
   ];
@@ -32,11 +33,11 @@ export const Projects = () => {
 
   const projectTab3 = [
     {
-      title: "E-Commerce Backend",
+      title: "E-Commerce",
       description:
         "Flask + SQLAlchemy backend for products, orders, and stock restocking logic. Dockerized.",
       imgUrl: projImg3,
-      link: "https://github.com/yourusername/ecommerce-backend", // ← replace
+      link: "https://github.com/JSander72/Frontend_Week6_MiniProject_FLASK_eCommerce.git", // ← replace
     },
   ];
 
