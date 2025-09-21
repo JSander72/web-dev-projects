@@ -2,35 +2,45 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<img width="1266" alt="Screen Shot 2022-06-19 at 2 18 18 PM" src="https://user-images.githubusercontent.com/50160672/174933373-1ba6cadf-1c9a-48c3-aa58-984d0bd62d82.png">
+## Features
 
-Built using:
+- **Dynamic Components**: Modular and reusable React components for scalability.
+- **Responsive Design**: Built with React-bootstrap for seamless viewing across devices.
+- **Smooth Animations**: Enhanced user experience using Animate.css.
 
-- Front-end library: React
-- CSS framework: React-bootstrap
-- CSS animations library: Animate.css
+## Available Scripts
 
-In the /personal-portfolio, you can run:
+In the `/personal-portfolio` directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Starts the development server.\
+Visit [http://localhost:3000](http://localhost:3000) to preview the app in your browser.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the test suite in watch mode.\
+Refer to the [testing documentation](https://facebook.github.io/create-react-app/docs/running-tests) for details.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Generates a production-ready build in the `build` folder.\
+React is bundled and optimized for performance, with minified files and hashed filenames.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For deployment instructions, see the [deployment guide](https://facebook.github.io/create-react-app/docs/deployment).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Folder Structure
+
+- **`/components`**: Contains reusable React components such as `Header`, `Footer`, and `ProjectCard`.
+- **`/assets`**: Stores images, icons, and other static resources.
+- **`/styles`**: Includes custom CSS files for additional styling.
+
+## Deployment
+
+This app is ready to be deployed to platforms like Netlify, Vercel, or GitHub Pages. Follow the [deployment guide](https://facebook.github.io/create-react-app/docs/deployment) for detailed steps.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+
+***Credit to [judygab web-dev-project](https://github.com/judygab/web-dev-projects.git) for the template and youtube tutorials***

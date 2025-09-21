@@ -230,6 +230,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+.navbar-logo {
+  transition: filter 0.5s ease, opacity 0.5s ease;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.navbar-logo.fade-out {
+  filter: brightness(0);
+  opacity: 0;
+}
+
+
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -421,7 +435,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #000000cc, #00000099), 
+              linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -466,7 +481,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+/* ===== Center project cards in each tab (horizontally + vertically) ===== */
+.project .tab-content .row {
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+  gap: 20px;                
+  min-height: 60vh;         
+}
+
+.project .proj-imgbx {
+  max-width: 320px;         /* keep cards a nice size */
+}
+
+
 /************ Projects Css ************/
+
+/************ Contact Css ************/
+
+
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
@@ -617,6 +650,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 20px;
 }
 
+.footer-logo {
+  transition: filter 0.5s ease, opacity 0.5s ease;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+
 .skills-grid { display: grid; gap: 1.25rem; margin-bottom: 2rem;}
 .skills-group-title { font-size: 1.1rem; margin: 0.5rem 0; }
 .skills-chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
@@ -634,4 +676,264 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
+/* ===== Contact: verification flow polish ===== */
+
+/* Keep inputs consistent height so the inline button aligns nicely */
+.contact form input,
+.contact form textarea {
+  line-height: 1.2;
+}
+
+.contact form input[type="email"],
+.contact form input[type="text"],
+.contact form input[type="tel"] {
+  min-height: 62px; /* visually matches your padded inputs */
+}
+
+/* Style the inline "Send Code" button to match site aesthetics */
+.contact form button[type="button"] {
+  width: 100%;
+  min-height: 62px;
+  margin-top: 0;
+  padding: 18px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 20px;                      /* match input radius */
+  border: 1px solid rgba(255,255,255,0.6);  /* subtle outline like your chips */
+  color: #fff;
+  background: transparent;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+/* Remove the primary-button hover fill on the inline button */
+.contact form button[type="button"]::before {
+  display: none;
+}
+
+/* Hover state: invert like navbar’s ghost button */
+.contact form button[type="button"]:hover {
+  background: #fff;
+  color: #121212;
+  border-color: #fff;
+}
+
+/* Keep the primary submit button looking like before */
+.contact form button[type="submit"] {
+  /* inherits your existing .contact form button styles */
+  border-radius: 0; /* keep square per your original */
+}
+
+/* Nice spacing for the optional code field when it appears */
+.contact form input[placeholder="Verification Code"] {
+  margin-top: 8px;
+}
+
+/* Tighten status message spacing under the form */
+.contact .danger, .contact .success {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* Layout helpers so the email + button row stays neat */
+.contact .px-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* On wider screens, the email and inline button look aligned */
+@media (min-width: 576px) {
+  .contact .px-1 {
+    height: 100%;
+  }
+  .contact .px-1 > input,
+  .contact .px-1 > button {
+    height: 100%;
+  }
+}
+
+/* Mobile: stack more comfortably */
+@media (max-width: 575.98px) {
+  .contact form button[type="button"] {
+    min-height: 56px;
+    margin-top: 8px; /* slight space when stacked under email */
+  }
+}
+
+/* ========================= */
+/* Mobile & Small Screen Adjustments */
+/* ========================= */
+
+/* Collapse navbar items vertically on small screens */
+@media (max-width: 768px) {
+  nav.navbar .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+/* Banner: stack text and image vertically */
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 600px;
+    padding: 180px 0 60px 0;
+    text-align: center;
+  }
+  .banner h1 {
+    /* padding-top: 200px; */
+    font-size: 42px;
+  }
+  /* .tagline {
+    padding-top: 300px;
+    font-size: 42px;
+  } */
+
+  .banner p {
+    /* padding-top: 300px; */
+    width: 100%;
+    font-size: 16px;
+  }
+  .banner img {
+    margin-top: 30px;
+  }
+}
+
+/* Skills section: make slider/grid stack naturally */
+@media (max-width: 768px) {
+  .skill-slider {
+    width: 100%;
+  }
+  .skills-chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Projects: vertical nav pills & full-width text */
+@media (max-width: 768px) {
+  .project p {
+    width: 90%;
+  }
+  .project .nav.nav-pills {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  .project .nav.nav-pills .nav-item {
+    width: 100%;
+  }
+  .nav-link#projects-tabs-tab-first,
+  .nav-link#projects-tabs-tab-second,
+  .nav-link#projects-tabs-tab-third {
+    border-radius: 0;
+  }
+}
+
+/* Contact section: stack form and image */
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 0 100px 0;
+  }
+  .contact img {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 70%;
+  }
+  .contact form {
+    width: 100%;
+  }
+}
+
+/* Footer: stack content */
+@media (max-width: 768px) {
+  .footer img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .newsletter-bx {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .banner {
+    padding-top: 340px; /* smaller phones get more padding */
+  }
+}
+
+/* === Skills carousel: stack vertically on small screens === */
+@media (max-width: 768px) {
+  /* Let the list expand so nothing is clipped */
+  .react-multi-carousel-list {
+    overflow: visible;
+  }
+  /* Kill the horizontal transform and lay items out in a single column */
+  .react-multi-carousel-track {
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  /* Ensure each slide stretches full width */
+  .react-multi-carousel-item,
+  .skill-slide {
+    width: 100% !important;
+    transform: none !important;
+  }
+  /* Make the meter images look good at mobile width */
+  .skill-slider .item img {
+    width: 70%;
+    max-width: 260px;
+  }
+  /* Hide arrows on mobile (we’re stacking, not sliding) */
+  .custom-arrow {
+    display: none !important;
+  }
+}
+
+/* ===== Skills: desktop arrow positioning ===== */
+@media (min-width: 769px) {
+  .skill-slider {
+    position: relative;               /* anchor arrows */
+  }
+  .custom-arrow {
+    display: grid !important;         /* ensure visible on desktop */
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+    z-index: 3;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .custom-arrow:hover {
+    background: rgba(255,255,255,0.16);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-50%) scale(1.05);
+  }
+  .custom-arrow:active {
+    transform: translateY(-50%) scale(0.98);
+  }
+  /* .custom-arrow.left  { left: -22px; }  
+  .custom-arrow.right { right: -22px; } */
+
+ 
+  .custom-arrow.left  { left: 6px; }
+  .custom-arrow.right { right: 6px; }
+}
+
+/* Keep arrows hidden when stacked on mobile (since Option A makes a vertical list) */
+@media (max-width: 768px) {
+  .custom-arrow { display: none !important; }
+}
 
